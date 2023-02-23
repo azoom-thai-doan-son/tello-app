@@ -10,6 +10,11 @@ const routes = [
     name: 'home',
     component: HomeView
   },
+  {
+    path: '/boards/:boardId',
+    name: 'Board',
+    component: HomeView
+  },
 ]
 
 const router = new VueRouter({

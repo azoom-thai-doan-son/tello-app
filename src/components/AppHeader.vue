@@ -1,6 +1,6 @@
 <template>
   <div class="app-header">
-    <h1>My Tello</h1>
+    <h2>My Tello</h2>
   </div>
 </template>
 
