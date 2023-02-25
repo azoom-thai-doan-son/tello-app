@@ -1,17 +1,20 @@
 <template>
   <div class="home-page">
-    <div class="top-section">
-      <h1>My Boards</h1>
-      <button class="button" @click="toggleModal">Add board</button>
+    <AppHeader />
+    <div class="body">
+      <div class="top-section">
+        <h1>My Boards</h1>
+        <button class="button" @click="toggleModal">Add board</button>
+      </div>
+      <main class="board-list">
+        <BoardItem v-for="board in boards" :key="board.id" v-bind="board" />
+      </main>
+      <BoardModal
+        :active="isShowModal"
+        @add-board="addBoard"
+        @toggle-modal="toggleModal"
+      />
     </div>
-    <main class="board-list">
-      <BoardItem v-for="board in boards" :key="board.id" v-bind="board" />
-    </main>
-    <BoardModal
-      :active="isShowModal"
-      @add-board="addBoard"
-      @toggle-modal="toggleModal"
-    />
   </div>
 </template>
 
@@ -51,8 +54,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.home-page {
-  padding: 16px 10px;
+.body {
+  padding: 12px 16px;
 }
 .top-section {
   margin-bottom: 16px;

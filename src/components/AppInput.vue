@@ -3,20 +3,20 @@
     <input
       type="input"
       class="form-field"
-      placeholder="Name"
+      :placeholder="label"
       name="name"
       id="name"
       required
       :value="value"
       @input="$emit('input', $event.target.value)"
     />
-    <label for="name" class="form-label">Board title</label>
+    <label for="name" class="form-label">{{ label }}</label>
   </div>
 </template>
 <script>
 export default {
   name: 'AppInput',
-  props: ['value'],
+  props: ['value', 'label'],
 };
 </script>
 <style scoped lang="scss">

@@ -1,25 +1,29 @@
 <template>
   <div id="app">
-    <AppHeader />
-    <router-view />
+    <!-- <AppHeader /> -->
+    <div class="page">
+      <router-view />
+    </div>
   </div>
 </template>
 
 <script>
-import AppHeader from '@/components/AppHeader.vue';
 export default {
   name: 'App',
-  components: {
-    AppHeader,
-  },
+  components: {},
 };
 </script>
 
-<style>
+<style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  display: flex;
+  flex-direction: column;
+  > .page {
+    flex-grow: 1;
+  }
 }
 </style>
